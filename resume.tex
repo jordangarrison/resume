@@ -47,8 +47,10 @@
 %----------------------------------------------------------------------------------------
 
 \aboutme{
-Passionate about my family, coding, home automation, hiking, playing disc golf, jazz,
-and being actively involved in my local church
+	Passionate about my family, coding, hiking, jazz,
+	and being actively involved in my local church.
+
+	I love writing software that makes complex systems easy to use.
 } % To have no About Me section, just remove all the text and leave \aboutme{}
 
 %----------------------------------------------------------------------------------------
@@ -57,6 +59,13 @@ and being actively involved in my local church
 
 % Skill bar section, each skill must have a value between 0 an 6 (float)
 \skills{
+	\textbf{Methodologies}
+	\newline
+	Infrastructure as a Product\newline
+	GitOps\newline
+	Embrace Complexity Create Simplicity\newline
+	Immutable systems\newline
+	\newline
 	\textbf{Programming:}
 	\newline
 	Go, TypeScript, NodeJS, Python, Shell Scripting
@@ -64,18 +73,24 @@ and being actively involved in my local church
 	\newline
 	\textbf{Automation:}
 	\newline
-	Ansible, Terraform, Pulumi, Nix
+	Ansible, Chef, Puppet, Terraform, Pulumi, Nix
 	\newline
 	\newline
 	\textbf{Linux:}
 	\newline
-	NixOS, Ubuntu, RHEL, Centos, Oracle Enterprise Linux, Debian, Fedora
+	Yes please! NixOS, Debian, Ubuntu, RHEL, Centos, Oracle Enterprise Linux, Fedora, Amazon Linux
 	\newline
 	\newline
 	\textbf{Containerization:}
 	\newline
-	Kubernetes
+	Kubernetes, Docker
 	\newline
+	\newline
+	\textbf{Systems:}
+	\newline
+	Istio, Memcached, Redis, MySQL, Spark, Kafka, Hadoop
+	\newline
+
 }
 %----------------------------------------------------------------------------------------
 
@@ -100,7 +115,7 @@ and being actively involved in my local church
 % \section{Publications}
 
 % \begin{twentyshort} % Environment for a short list with no descriptions
-	%\twentyitemshort{<dates>}{<title/description>}
+%\twentyitemshort{<dates>}{<title/description>}
 % \end{twentyshort}
 
 %----------------------------------------------------------------------------------------
@@ -110,12 +125,11 @@ and being actively involved in my local church
 \section{Awards}
 
 \begin{twentyshort} % Environment for a short list with no descriptions
-	\twentyitemshort{2019}{Promotion out of New College Hire Program\hfill\footnotesize{\color{black}General Motors}}
-	\twentyitemshort{2019}{Life Saving Award - Presented by CEO\hfill\footnotesize{\color{black}General Motors}}
-	\twentyitemshort{2019}{CIO Safety Award - Presented by CIO\hfill\footnotesize{\color{black}General Motors}}
-	\twentyitemshort{2018,2019}{CIO Distinguished New College Hire\hfill\footnotesize{\color{black}General Motors}}
-	\twentyitemshort{2021}{Promotion to Senior Infrastructure Engineer\hfill\footnotesize{\color{black}FloSports}}
 	\twentyitemshort{2021}{Top Performer - Own It\hfill\footnotesize{\color{black}FloSports}}
+	\twentyitemshort{2021}{Promotion to Senior Infrastructure Engineer\hfill\footnotesize{\color{black}FloSports}}
+	\twentyitemshort{2019}{CEO - Life Saving Award | CIO - Safety Award\hfill\footnotesize{\color{black}General Motors}}
+	\twentyitemshort{2019}{Promotion out of New College Hire Program\hfill\footnotesize{\color{black}General Motors}}
+	\twentyitemshort{2018,2019}{CIO Distinguished New College Hire\hfill\footnotesize{\color{black}General Motors}}
 	%\twentyitemshort{<dates>}{<title/description>}
 \end{twentyshort}
 
@@ -126,35 +140,44 @@ and being actively involved in my local church
 \section{Experience}
 
 \begin{twenty} % Environment for a list with descriptions
-	\twentyitem{2017-Now}{Hadoop Platform Engineer}{General Motors}{At General Motors, I work as a Hadoop Platform Engineer to deploy and implement new technologies into the Hadoop stack.
-	This involves engineering and supporting 15 PB core production clusters and multiple development environments for our Business and Data Science users.
-	Projects listed below.
-	
-	\textbf{Ranger and Atlas} - As the Technical Lead, deployed role-based access to Hadoop production environments.
-	Led a team under a tight timeline to implement Ranger and Atlas services, which allowed easier on-boarding and off-boarding of groups into the Hadoop environment.
-	
-	\textbf{Automated Yarn Queue Scheduler} - Developed a client based tool written in Go to allow for automated switching of the Yarn Queues for day and night workloads.
-	This implemented Kerberos authentication with no client dependencies utilizeing SPNEGO authorization to the kerberized Ambari server.
-	This led to the development of a framework of libraries and API's to build new tooling off of.
-	Currently, working this tool into a framework to provide automation of all cluster operations.
-	
-	\textbf{Hadoop Monitoring System} - Authored and maintain a 10,000+ Line Python code base for monitoring cluster metrics from a remote system through the Ambari API's metrics.
-	This system was integrated into Prometheus and an Oracle database to allow for frontend visualizations to be created using Grafana and a custom PHP dashboard.
-	Currently, working to revamp this with a team to better utilize the Prometheus exporter ecosystem to allow fore more scalable monitoring.}
+	\twentyitem{2021-now}{Senior Infrastructure Engineer}{FloSports}{Lead role driving infrastructure as product at FloSports.
 
-	\twentyitem{2016-2017}{Research Technician and Python Developer}{Lynntech Inc.}{At Lynntech, I developed IoT devices and scientific instruments using Python and the Arduino programming language.
-	Projects listed below.
-	
-	\textbf{Iodine Detector} - This was a small embedded device which detected iodine absorbance in cartridges as a countermeasure in areas of the world where the water system did not meet regulatory standards for iodine content to prevent large outbreaks of hyperthyroidism.
-	The core skills utilized in the project were circuit design, Python programming, Qt GUI design, and extensive testing of device consistency.
-	
-	\textbf{Salination Level Detection} - This project was a demo where the team took sea water and purified it to drinkable water.
-	My role was to integrate the pH and saline sensors with an Arduino board to validate safe drinking levels.
-	Programmed in the Arduino programming language using the I2C interface to the chips for the sensor probes.}%% [[YOU ARE HERE]]
-	
-	\twentyitem{2014}{Data Analyst}{Texas A\&M Department of Physics and Astronomy}{Research role in the Texas A\&M Department of Physics and Astronomy. Worked as a data analyst under Ricardo Eusebi Ph.D. running simulations of the Higg's Boson particle.
-	Programmed in C++ and Bash to run proton collision simulations to produce the Higg's occurrence.
-	This was my introduction into cluster computing and data analytics.}
+		\textbf{FloSports Deployment Proxy} - Deployment proxy allowing for simple deployments to our kubernetes environments.
+
+		\textbf{Cluster Automation Migration} - Effort to deploy infrastructure utilizing GitOps. Goal is to deploy immutable kubernetes systems in a repeatable fashion with dns cutover.}
+
+	\twentyitem{2019-2021}{Infrastructure Engineer}{FloSports}{Infrastructure as product team in charge of building the cloud platform FloSports services run on.
+
+		\textbf{Load Testing Platform} - Distrubuted load testing platform built on kubernetes jobs.
+		Utilizes the Grafana/K6 load testing cli tool in a distributed manner.
+		Allows FloSports to validate readiness for large streaming events.
+		Built with ExpressJS and Yargs
+
+		\textbf{Traffic Replay} - Built functionality to replay traffic captured through our istio ingress gateway using GoReplay.
+		Built on top of the Load Testing Platform}
+
+	\twentyitem{2017-2019}{Hadoop Platform Engineer}{General Motors}{Worked as a Hadoop Platform Engineer engineering 15 PB core production clusters and multiple development environments for our Business and Data Science users.
+
+		\textbf{Ranger and Atlas} - Lead deployment role-based access to Hadoop production environments.
+		Tight timeline to implement Ranger and Atlas services.
+		The project allowed easier on-boarding and off-boarding of groups into Hadoop.
+
+		\textbf{Automated Yarn Queue Scheduler} - Developed Golang tool to allow for automated switching of the Yarn Queues for day and night workloads.
+
+		\textbf{Hadoop Monitoring System} - Python framework for monitoring cluster metrics.
+		Integrated into Prometheus and an Oracle database to allow for frontend visualizations to be created using Grafana and a custom PHP dashboard.}
+
+	\twentyitem{2016-2017}{Research Technician and Python Developer}{Lynntech Inc.}{Developed physical prototypes using Python and the Arduino programming language.
+
+		\textbf{Iodine Detector} - Small regulatory device which detected iodine absorbance in cartridges.
+		Meant to prevent hyper-thyroidism outbreaks due to water mismanagement.
+		The project involved circuit design, Python programming, Qt GUI design, and extensive testing of device consistency.
+
+		\textbf{Salination Level Detection} - Demo purifying sea water to drinkable water.
+		Integrated the pH and saline sensors with an Arduino board to validate safe drinking levels.}%% [[YOU ARE HERE]]
+
+	\twentyitem{2014}{Data Analyst}{Texas A\&M Department of Physics and Astronomy}{Research role in the Texas A\&M Department of Physics and Astronomy and introduction to distributed computing. Worked as a data analyst running simulations of the Higg's Boson particle.
+		Programmed in C++ and Bash to run proton collision simulations.}
 	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
 \end{twenty}
 
@@ -175,13 +198,13 @@ and being actively involved in my local church
 %	 SECOND PAGE EXAMPLE
 %----------------------------------------------------------------------------------------
 
-%\newpage % Start a new page
+% \newpage % Start a new page
 
-%\makeprofile % Print the sidebar
+% \makeprofile % Print the sidebar
 
-%\section{Other information}
+% \section{Other information}
 
-%\subsection{Review}
+% \subsection{Review}
 
 %Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
 
@@ -193,5 +216,4 @@ and being actively involved in my local church
 
 %----------------------------------------------------------------------------------------
 
-\end{document} 
-
+\end{document}
