@@ -30,12 +30,12 @@
 \profilepic{headshot.jpg} % Profile picture
 
 \cvname{Jordan Garrison} % Your name
-\cvjobtitle{Sr. Infrastructure Engineer} % Job title/career
+\cvjobtitle{Cloud Platform Engineer} % Job title/career
 
-\cvdate{} % Date of birth
 \cvaddress{Austin, TX} % Short address/location, use \newline if more than 1 line is required
 \cvnumberphone{+1 972-754-0717} % Phone number
-\cvsite{linkedin.com/in/jordan-garrison} % Personal website
+\cvsite{www.jordangarrison.dev} % Personal website
+\cvdate{/in/jordan-garrison} % Date of birth
 \cvmail{jordan@jordangarrison.dev} % Email address
 
 %----------------------------------------------------------------------------------------
@@ -47,10 +47,10 @@
 %----------------------------------------------------------------------------------------
 
 \aboutme{
-	Passionate about my family, coding, hiking, jazz,
+	Passionate about my family, Open Source, Linux, Jiu Jitsu,
 	and being actively involved in my local church.
 
-	I love writing software that makes complex systems easy to use.
+	I love writing software that makes complex systems easy to use. Embrace Complexity Create Simplicity.
 } % To have no About Me section, just remove all the text and leave \aboutme{}
 
 %----------------------------------------------------------------------------------------
@@ -59,37 +59,65 @@
 
 % Skill bar section, each skill must have a value between 0 an 6 (float)
 \skills{
-	\textbf{Methodologies}
+	\textbf{Specialized Skills:}
 	\newline
-	Infrastructure as a Product\newline
-	GitOps\newline
-	Embrace Complexity Create Simplicity\newline
-	Immutable systems\newline
-	\newline
-	\textbf{Programming:}
-	\newline
-	Go, TypeScript, NodeJS, Python, Shell Scripting
+	Developer Platforms, GitOps, Immutable systems, SLOs, Load Testing, Distributed Systems, Incident Response
 	\newline
 	\newline
-	\textbf{Automation:}
+	\textbf{Languages:}
 	\newline
-	Ansible, Chef, Puppet, Terraform, Pulumi, Nix
+	Go, TypeScript, NodeJS, Python, Bash
+	\newline
+	\newline
+	\textbf{Platforms:}
+	\newline
+	Kubernetes, Istio, Argo, SST, Fastly, Spark, Kafka, Hadoop
+	\newline
+	\newline
+	\textbf{IaC:}
+	\newline
+	Terraform, CDK, Helm, Kustomize, Ansible, Chef, Puppet
 	\newline
 	\newline
 	\textbf{Linux:}
 	\newline
-	Yes please! NixOS, Debian, Ubuntu, RHEL, Centos, Oracle Enterprise Linux, Fedora, Amazon Linux
+	Yes please! Especially love NixOS
 	\newline
 	\newline
-	\textbf{Containerization:}
+	\textbf{CI/CD:}
 	\newline
-	Kubernetes, Docker
+	GitHub Actions, Jenkins, Google CloudBuild
 	\newline
 	\newline
-	\textbf{Systems:}
+	\textbf{Observability:}
 	\newline
-	Istio, Memcached, Redis, MySQL, Spark, Kafka, Hadoop
+	Prometheus, Grafana, Kibana, Datadog, APM
+}
+
+\otherskills{
+	\textbf{Management:}
 	\newline
+	Hiring, Contracting, Roadmapping, 1:1s, Performance Reviews, OKRs
+	\newline
+	\newline
+	\textbf{Project Management:}
+	\newline
+	Agile, Scrum, Kanban, Jira, Confluence, PI Planning, Standups, Retrospectives, Scrum Master
+	\newline
+	\newline
+	\textbf{Databases}
+	\newline
+	MySQL, Postgres, DynamoDB, BigQuery, HBase, Hive, InfluxDB
+	\newline
+	\newline
+	\textbf{Caches}
+	\newline
+	Redis, Memcached, Varnish (Fastly)
+	\newline
+	\newline
+	\textbf{Indexes:}
+	\newline
+	Elasticsearch, Solr, Manticore, OpenSearch
 
 }
 %----------------------------------------------------------------------------------------
@@ -119,28 +147,27 @@
 % \end{twentyshort}
 
 %----------------------------------------------------------------------------------------
-%	 AWARDS
-%----------------------------------------------------------------------------------------
-
-\section{Awards}
-
-\begin{twentyshort} % Environment for a short list with no descriptions
-	\twentyitemshort{2021}{Top Performer - Own It\hfill\footnotesize{\color{black}FloSports}}
-	\twentyitemshort{2021}{Promotion to Senior Infrastructure Engineer\hfill\footnotesize{\color{black}FloSports}}
-	\twentyitemshort{2019}{CEO - Life Saving Award | CIO - Safety Award\hfill\footnotesize{\color{black}General Motors}}
-	\twentyitemshort{2019}{Promotion out of New College Hire Program\hfill\footnotesize{\color{black}General Motors}}
-	\twentyitemshort{2018,2019}{CIO Distinguished New College Hire\hfill\footnotesize{\color{black}General Motors}}
-	%\twentyitemshort{<dates>}{<title/description>}
-\end{twentyshort}
-
-%----------------------------------------------------------------------------------------
 %	 EXPERIENCE
 %----------------------------------------------------------------------------------------
 
 \section{Experience}
 
 \begin{twenty} % Environment for a list with descriptions
-	\twentyitem{2021-now}{Senior Infrastructure Engineer}{FloSports}{Lead role driving infrastructure as product at FloSports.
+	\twentyitem{2023-Now}{Tech Lead Manager - DevOps/Infra}{FloSports}{Player-Coach role leading the Infrastructure team at FloSports.
+
+		\textbf{Cloud Consolidation Project} - Effort to consolidate cloud providers from GCP to AWS and reduce costs. Migrated GKE services to EKS in partnership with the AWS MAP program. Migrated Core Monolith and surrounding services to EKS utilzing GitHub Actions, CDK, and DMS to migrate databases with no downtime.
+
+		\textbf{Uptime Baseline and SLOs} - Along with my teammate, we set a baseline for uptime across all platforms at FloSports. We built playbooks and educated develoeprs to build SLOs into all services.
+
+		\textbf{Terraform consolidation} - The team was on CDK, Terraform, and SST. Consolidated to Terraform for all infrastructure as code.
+
+		\textbf{Trackwrestling Migration to EKS} - Migrated Trackwrestling services from OpsWorks to EKS before EoL of AWS OpsWorks. Utilized FloSports Deployment Proxy and CloudBuild to migrate the service to new clusters with no downtime.
+
+		\textbf{Sphinx to Manticore} - Built and deployed Manticore search engine to replace Sphinx. Utilized Fargate, CDK, and Kubernetes for deployment.
+
+		\textbf{Management and Product Ownership} - Responsible for hiring, contracting, and setting the roadmap. Product owner, ensured the team is aligned with the company's goals. Responsible for code quality and architecture. Oversaw proejcts to: migrate AWS SSO to AWS IAM Identity Center with CDK, Reduce cloud costs by 25\%, Migrate from Google CloudBuild to GitHub Actions, Migrate services from AWS to GCP, and implement and upgrade Karpenter for EKS autoscaling.
+	}
+	\twentyitem{2021-2023}{Senior Infrastructure Engineer}{FloSports}{Senior role driving infrastructure as product at FloSports.
 
 		\textbf{FloSports Deployment Proxy} - Deployment proxy allowing for simple deployments to our kubernetes environments.
 
@@ -167,17 +194,7 @@
 		\textbf{Hadoop Monitoring System} - Python framework for monitoring cluster metrics.
 		Integrated into Prometheus and an Oracle database to allow for frontend visualizations to be created using Grafana and a custom PHP dashboard.}
 
-	\twentyitem{2016-2017}{Research Technician and Python Developer}{Lynntech Inc.}{Developed physical prototypes using Python and the Arduino programming language.
 
-		\textbf{Iodine Detector} - Small regulatory device which detected iodine absorbance in cartridges.
-		Meant to prevent hyper-thyroidism outbreaks due to water mismanagement.
-		The project involved circuit design, Python programming, Qt GUI design, and extensive testing of device consistency.
-
-		\textbf{Salination Level Detection} - Demo purifying sea water to drinkable water.
-		Integrated the pH and saline sensors with an Arduino board to validate safe drinking levels.}%% [[YOU ARE HERE]]
-
-	\twentyitem{2014}{Data Analyst}{Texas A\&M Department of Physics and Astronomy}{Research role in the Texas A\&M Department of Physics and Astronomy and introduction to distributed computing. Worked as a data analyst running simulations of the Higg's Boson particle.
-		Programmed in C++ and Bash to run proton collision simulations.}
 	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
 \end{twenty}
 
@@ -198,17 +215,53 @@
 %	 SECOND PAGE EXAMPLE
 %----------------------------------------------------------------------------------------
 
-% \newpage % Start a new page
+\newpage % Start a new page
 
-% \makeprofile % Print the sidebar
+\makesecondsidebar % Print the sidebar
 
-% \section{Other information}
+
 
 % \subsection{Review}
 
 %Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
 
-%\section{Other information}
+%----------------------------------------------------------------------------------------
+%	 AWARDS
+%----------------------------------------------------------------------------------------
+
+\section{Awards \& Promotions}
+
+\begin{twentyshort} % Environment for a short list with no descriptions
+	\twentyitemshort{2023}{Promotion to Tech Lead\hfill\footnotesize{\color{black}FloSports}}
+	\twentyitemshort{2021}{Top Performer - Own It\hfill\footnotesize{\color{black}FloSports}}
+	\twentyitemshort{2021}{Promotion to Senior Infrastructure Engineer\hfill\footnotesize{\color{black}FloSports}}
+	\twentyitemshort{2019}{CEO - Life Saving Award | CIO - Safety Award\hfill\footnotesize{\color{black}General Motors}}
+	\twentyitemshort{2019}{Early Promotion out of New College Hire Program\hfill\footnotesize{\color{black}General Motors}}
+	\twentyitemshort{2018,2019}{CIO Distinguished New College Hire\hfill\footnotesize{\color{black}General Motors}}
+	%\twentyitemshort{<dates>}{<title/description>}
+\end{twentyshort}
+
+\section{Certifications}
+
+\begin{twentyshort}
+	\twentyitem{April 2024}{Advanced GitOps Certification}{Credential ID: 101100053}{GitOps certification for using the Akuity platform manage Kubernetes.}
+\end{twentyshort}
+
+\section{Other Experience}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem{2014}{Data Analyst}{Texas A\&M Department of Physics and Astronomy}{Research role in the Texas A\&M Department of Physics and Astronomy and introduction to distributed computing. Worked as a data analyst running simulations of the Higg's Boson particle.
+		Programmed in C++ and Bash to run proton collision simulations.}
+
+	\twentyitem{2016-2017}{Research Technician and Python Developer}{Lynntech Inc.}{Developed physical prototypes using Python and the Arduino programming language.
+
+		\textbf{Iodine Detector} - Small regulatory device which detected iodine absorbance in cartridges.
+		Meant to prevent hyper-thyroidism outbreaks due to water mismanagement.
+		The project involved circuit design, Python programming, Qt GUI design, and extensive testing of device consistency.
+
+		\textbf{Salination Level Detection} - Demo purifying sea water to drinkable water.
+		Integrated the pH and saline sensors with an Arduino board to validate safe drinking levels.}%% [[YOU ARE HERE]]
+\end{twenty}
 
 %\subsection{Review}
 

@@ -77,17 +77,18 @@
 \newcommand{\profilepic}[1]{\renewcommand{\profilepic}{#1}}
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
 \newcommand{\cvjobtitle}[1]{\renewcommand{\cvjobtitle}{#1}}
+\newcommand{\otherskills}[1]{\renewcommand{\otherskills}{#1}}
 
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
 % Command for printing skills text
-\newcommand\skillstext[1]{ 
+\newcommand\skillstext[1]{
 	\renewcommand{\skillstext}{
 		\begin{flushleft}
-			\foreach [count=\i] \x/\y in {#1}{ 
-				\x$ \star $\y
-			}
+			\foreach [count=\i] \x/\y in {#1}{
+					\x$ \star $\y
+				}
 		\end{flushleft}
 	}
 }
@@ -121,7 +122,7 @@
 % 	\renewcommand{\myskills}{
 % 		\begin{tkzpicture}
 % 			\foreach [count\i] \x/\y/\z in {#1}{
-				
+
 % 			}
 % 	}
 % }
@@ -132,15 +133,15 @@
 
 \newcommand{\makeprofile}{
 	\begin{tikzpicture}[remember picture,overlay]
-   		\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+		\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
 	\end{tikzpicture}
 
 	%------------------------------------------------
 
 	\begin{textblock}{6}(0.5, 0.2)
-			
+
 		%------------------------------------------------
-		
+
 		\ifthenelse{\equal{\profilepic}{}}{}{
 			\begin{center}
 				\begin{tikzpicture}[x=\imagescale,y=-\imagescale]
@@ -162,15 +163,15 @@
 
 		\renewcommand{\arraystretch}{1.6}
 		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
-			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Info}} & \cvdate\\}
-			\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}} & \cvaddress\\}
+			\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}}      & \cvaddress\\}
 			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvnumberphone\\}
-			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\Mundus}} & \cvsite\\}
-			\ifthenelse{\equal{\cvmail}{}}{}{\textsc{\large\icon{@}} & \href{mailto:\cvmail}{\cvmail}}
+			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\Mundus}}         & \cvsite\\}
+			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Info}}           & \cvdate\\}
+			\ifthenelse{\equal{\cvmail}{}}{}{\textsc{\large\icon{@}}               & \href{mailto:\cvmail}{\cvmail}}
 		\end{tabular}
 
 		%------------------------------------------------
-		
+
 		\ifthenelse{\equal{\aboutme}{}}{}{
 			\profilesection{About me}
 			\begin{flushleft}
@@ -185,9 +186,46 @@
 		\skills
 		\skillstext
 		\scriptsize
-			
+
 		%------------------------------------------------
-			
+
+	\end{textblock}
+}
+
+\newcommand{\makesecondsidebar}{
+	\begin{tikzpicture}[remember picture,overlay]
+		\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+	\end{tikzpicture}
+
+	%------------------------------------------------
+
+	\begin{textblock}{6}(0.5, 0.2)
+
+		%------------------------------------------------
+
+		{\Huge\color{mainblue}\cvname}
+
+			%------------------------------------------------
+
+			{\Large\color{black!80}\cvjobtitle}
+
+		%------------------------------------------------
+
+		\renewcommand{\arraystretch}{1.6}
+		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
+			\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}}      & \cvaddress\\}
+			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvnumberphone\\}
+			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\Mundus}}         & \cvsite\\}
+			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Info}}           & \cvdate\\}
+			\ifthenelse{\equal{\cvmail}{}}{}{\textsc{\large\icon{@}}               & \href{mailto:\cvmail}{\cvmail}}
+		\end{tabular}
+
+		%------------------------------------------------
+
+		\profilesection{More Skills}
+
+		\otherskills
+
 	\end{textblock}
 }
 
@@ -203,29 +241,29 @@
 \newcounter{colorCounter}
 \newcommand{\sectioncolor}[1]{%
 	{%
-		\round{#1}{
-			\ifcase\value{colorCounter}%
-			maingray\or%
-			mainblue\or%
-			maingray\or%
-			mainblue\or%
-			maingray\or%
-			mainblue\or%
-			maingray\or%
-			mainblue\or%
- 			maingray\or%
-			mainblue\else%
-			maingray\fi%
+			\round{#1}{
+				\ifcase\value{colorCounter}%
+					maingray\or%
+					mainblue\or%
+					maingray\or%
+					mainblue\or%
+					maingray\or%
+					mainblue\or%
+					maingray\or%
+					mainblue\or%
+					maingray\or%
+					mainblue\else%
+					maingray\fi%
+			}%
 		}%
-	}%
 	\stepcounter{colorCounter}%
 }
 
 \renewcommand{\section}[1]{
 	{%
-		\color{gray}%
-		\Large\sectioncolor{#1}%
-	}
+			\color{gray}%
+			\Large\sectioncolor{#1}%
+		}
 }
 
 \renewcommand{\subsection}[1]{
@@ -244,7 +282,7 @@
 % New environment for the long list
 \newenvironment{twenty}{%
 	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-}{%
+		}{%
 	\end{tabular*}
 }
 
@@ -266,7 +304,7 @@
 % New environment for the small list
 \newenvironment{twentyshort}{%
 	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-}{%
+		}{%
 	\end{tabular*}
 }
 
@@ -284,7 +322,7 @@
 % New environment for the long list
 \newenvironment{twentyother}{%
 	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-}{%
+		}{%
 	\end{tabular*}
 }
 
